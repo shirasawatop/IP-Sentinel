@@ -1,10 +1,20 @@
 {
-  "region_code": "US",
-  "region_name": "美国 (美西洛杉矶)",
+  "region_name": "美国 (美西)",
   "google_module": {
     "base_lat": 34.0522,
     "base_lon": -118.2437,
-    "lang_params": "hl=en&gl=us&ceid=US:en",
-    "valid_url_suffix": "google.com"
+    "lang_params": "hl=en&gl=US",
+    "valid_url_suffix": "com"
+  },
+  "trust_module": {
+    "white_urls": [
+      "https://en.wikipedia.org/wiki/Special:Random",
+      "https://www.yahoo.com/",
+      "https://www.target.com/",
+      "https://www.npr.org/",
+      "https://www.weather.com/",
+      "https://www.amazon.com/",
+      "https://www.cdc.gov/"
+    ]
   }
 }
