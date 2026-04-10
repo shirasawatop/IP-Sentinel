@@ -161,6 +161,45 @@ if [[ "$TG_CHOICE" =~ ^[Yy]$ ]]; then
     [ -n "$INPUT_PORT" ] && AGENT_PORT="$INPUT_PORT"
 fi
 
+# ================== [v3.0.1新增修改 1: 网络栈探测与锚点锁定] ==================
+echo -e "\n[4.5/7] 正在探测本机网络栈与可用出口..."
+DETECT_V4=$(curl -4 -s -m 3 api.ip.sb/ip | tr -d '[:space:]')
+DETECT_V6=$(curl -6 -s -m 3 api.ip.sb/ip | tr -d '[:space:]')
+
+DEFAULT_IP=""
+IP_PREF="4"
+if [ -n "$DETECT_V4" ]; then
+    DEFAULT_IP="$DETECT_V4"; IP_PREF="4"
+elif [ -n "$DETECT_V6" ]; then
+    DEFAULT_IP="$DETECT_V6"; IP_PREF="6"
+fi
+
+echo -e "\033[36m📍 发现可用出口 IP，请选择要注册与养护的锚点:\033[0m"
+echo "  1) 🤖 智能默认 (推荐，首选可用IP: ${DEFAULT_IP:-获取失败})"
+[[ -n "$DETECT_V4" ]] && echo "  2) 🌐 强制锁定 IPv4 ($DETECT_V4)"
+[[ -n "$DETECT_V6" ]] && echo "  3) 🌌 强制锁定 IPv6 ($DETECT_V6)"
+echo "  4) ✍️ 手动指定 (适合站群机，手动输入特定 IP)"
+
+read -p "请输入选择 (默认1): " IP_CHOICE
+case "${IP_CHOICE:-1}" in
+    2) PUBLIC_IP="$DETECT_V4"; IP_PREF="4" ;;
+    3) PUBLIC_IP="$DETECT_V6"; IP_PREF="6" ;;
+    4) 
+       read -p "请输入您要绑定的公网 IP (v4 或 v6): " PUBLIC_IP
+       [[ "$PUBLIC_IP" == *":"* ]] && IP_PREF="6" || IP_PREF="4"
+       ;;
+    *) PUBLIC_IP="$DEFAULT_IP" ;;
+esac
+
+# 终极修复：为 IPv6 自动穿上防护装甲（方括号），解决 Master 拼接 URL 报错问题
+if [[ "$PUBLIC_IP" == *":"* ]] && [[ "$PUBLIC_IP" != *"["* ]]; then
+    BIND_IP="[${PUBLIC_IP}]"
+else
+    BIND_IP="$PUBLIC_IP"
+fi
+echo -e "\033[32m✅ 哨兵锚点已永久锁定至: $BIND_IP\033[0m"
+# ========================================================================
+
 # 5. 远程拉取冷数据并解析固化
 echo -e "\n[5/7] 正在从云端数据仓库拉取 [${CITY_NAME}] 节点的底层规则..."
 REGION_JSON_FILE="${INSTALL_DIR}/data/regions/${COUNTRY_ID}/${STATE_ID}/${CITY_ID}.json"
@@ -198,6 +237,10 @@ CHAT_ID="$CHAT_ID"
 AGENT_PORT="$AGENT_PORT"
 INSTALL_DIR="$INSTALL_DIR"
 LOG_FILE="${INSTALL_DIR}/logs/sentinel.log"
+
+# [v3.0.1新增修改 2: 网络栈锚点锁定配置，供其他脚本读取] 
+IP_PREF="$IP_PREF"
+BIND_IP="$BIND_IP"
 EOF
 
 # 6. 拉取全套组件 (按需下载，绝不浪费空间)
@@ -251,12 +294,13 @@ rm -f /tmp/cron_backup
 if [[ -n "$TG_TOKEN" ]] && [[ -n "$CHAT_ID" ]]; then
     echo -e "\n📡 正在向指挥部发送注册暗号..."
     
-    # 获取公网 IP
-    PUBLIC_IP=$(curl -s https://api64.ipify.org || curl -s https://ifconfig.me || echo "未知IP")
+    # [v3.0.1新增修改 3: 删除原来的 curl 取 IP，直接使用我们上方锁定的 BIND_IP]
+    # 并提前写入 IP 缓存，彻底阻断 agent_daemon 首次启动时的重复推送
+    echo "$BIND_IP" > "${INSTALL_DIR}/core/.last_ip"
     
-    # 构造注册暗号 (修复 v3.0 竖线分隔符与主机名回调 BUG)
+# 构造注册暗号 (使用带 [] 装甲的 BIND_IP，防止 Master 端解析错误)
     NODE_NAME=$(hostname | cut -c 1-15)
-    REG_MSG="#REGISTER#|${NODE_NAME}|${PUBLIC_IP}|${AGENT_PORT}"
+    REG_MSG="#REGISTER#|${NODE_NAME}|${BIND_IP}|${AGENT_PORT}"
     
 # 执行主动推送
     PUSH_RESULT=$(curl -s -X POST "${TG_API_URL}" \
@@ -264,7 +308,7 @@ if [[ -n "$TG_TOKEN" ]] && [[ -n "$CHAT_ID" ]]; then
         -d "parse_mode=Markdown" \
         -d "text=✨ *IP-Sentinel 部署成功！*
 📍 区域：${REGION_NAME}
-🌐 IP：${PUBLIC_IP}
+🌐 IP：${BIND_IP}
 🔌 端口：${AGENT_PORT}
 
 🔑 *请点击下方指令复制并回复给机器人：*
