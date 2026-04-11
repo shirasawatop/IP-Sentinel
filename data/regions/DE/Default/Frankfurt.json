@@ -1,0 +1,20 @@
+{
+  "region_name": "Germany - Frankfurt",
+  "google_module": {
+    "base_lat": 50.1109,
+    "base_lon": 8.6821,
+    "lang_params": "hl=de&gl=DE",
+    "valid_url_suffix": "de"
+  },
+  "trust_module": {
+    "white_urls": [
+      "https://www.amazon.de/",
+      "https://www.spiegel.de/",
+      "https://www.tagesschau.de/",
+      "https://de.wikipedia.org/wiki/Spezial:Zuf%C3%A4llige_Seite",
+      "https://www.ebay.de/",
+      "https://www.bild.de/",
+      "https://www.kicker.de/"
+    ]
+  }
+}
