@@ -106,6 +106,19 @@ while true; do
 
                 db_exec "INSERT INTO nodes (chat_id, node_name, agent_ip, agent_port, last_seen) VALUES ('$CHAT_ID', '$NODE_NAME', '$AGENT_IP', '$AGENT_PORT', CURRENT_TIMESTAMP) ON CONFLICT(chat_id, node_name) DO UPDATE SET agent_ip='$AGENT_IP', agent_port='$AGENT_PORT', last_seen=CURRENT_TIMESTAMP;"
                 send_msg "$CHAT_ID" "✅ 司令部已确认！节点接入成功: \`$NODE_NAME\` ($AGENT_IP:$AGENT_PORT)"
+                
+                # ================== [v3.1.2 丝滑连招: 注册完毕直接呼出面板] ==================
+                NODE_LIST=$(db_exec "SELECT node_name FROM nodes WHERE chat_id='$CHAT_ID';")
+                if [ -n "$NODE_LIST" ]; then
+                    BTNS="["
+                    for N in $NODE_LIST; do
+                        BTNS="$BTNS[{\"text\":\"🖥️ $N\",\"callback_data\":\"manage:$N\"}],"
+                    done
+                    BTNS="${BTNS%,}]"
+                    send_ui "$CHAT_ID" "🔍 您名下的活跃节点：" "$BTNS"
+                fi
+                # ========================================================================
+                
                 continue
             fi
 
