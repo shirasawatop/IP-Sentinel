@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# 脚本名称: agent_daemon.sh (受控节点 Webhook 守护进程 V3.0.3)
+# 脚本名称: agent_daemon.sh (受控节点 Webhook 守护进程 V3.3.1)
 # 核心功能: 智能防打扰注册、进程自检、模块级路由分发(403拦截)
 # ==========================================================
 
@@ -24,14 +24,18 @@ if pgrep -f "webhook.py $AGENT_PORT" > /dev/null; then
     exit 0
 fi
 
-# 1. [v3.0.1修复] 严格按照 install.sh 锁定的网络协议 (v4/v6) 获取 IP
+# 1. 尝试获取实时公网 IP
 RAW_IP=$(curl -${IP_PREF:-4} -s -m 5 api.ip.sb/ip | tr -d '[:space:]')
 
-# 为新获取到的 v6 自动加方括号，以确保与之前锁定的格式对齐比对
-if [[ "$RAW_IP" == *":"* ]] && [[ "$RAW_IP" != *"["* ]]; then
-    AGENT_IP="[${RAW_IP}]"
+# [v3.3.1 修改] 为新获取到的 v6 自动加方括号；如果网络波动没抓到，强制信任本地 config 中的公网面孔
+if [ -n "$RAW_IP" ]; then
+    if [[ "$RAW_IP" == *":"* ]] && [[ "$RAW_IP" != *"["* ]]; then
+        AGENT_IP="[${RAW_IP}]"
+    else
+        AGENT_IP="$RAW_IP"
+    fi
 else
-    AGENT_IP="$RAW_IP"
+    AGENT_IP="${PUBLIC_IP:-${BIND_IP:-Unknown}}"
 fi
 
 if [ -n "$AGENT_IP" ]; then
