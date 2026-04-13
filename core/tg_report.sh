@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# 脚本名称: tg_report.sh (Telegram 每日战报模块 V6.0 动态拼装版)
+# 脚本名称: tg_report.sh (Telegram 每日战报模块 V3.3.1 动态拼装版)
 # 核心功能: 适配 Feature Flag 架构，按需展示 Google/Trust 独立统计数据
 # ==========================================================
 
@@ -36,8 +36,8 @@ fi
 
 # 多节点容灾探测出口 IP (注入协议自适应)
 CURRENT_IP=$( (curl $CURL_BIND_OPT $DYNAMIC_IP_PREF -s -m 5 api.ip.sb/ip || curl $CURL_BIND_OPT $DYNAMIC_IP_PREF -s -m 5 ifconfig.me) 2>/dev/null | tr -d '[:space:]' )
-# 强制兜底：如果所有外部 API 都挂了，直接使用本地强行锁定的 BIND_IP
-[ -z "$CURRENT_IP" ] && CURRENT_IP="$BIND_IP"
+# [v3.3.1 修改] 强制兜底：如果外部 API 挂了，优先使用固化的对外公网面孔 (兼容 NAT 机的空 BIND_IP)
+[ -z "$CURRENT_IP" ] && CURRENT_IP="${PUBLIC_IP:-$BIND_IP}"
 
 # 为可能获取到的 IPv6 自动添加方括号护甲
 [[ "$CURRENT_IP" == *":"* ]] && [[ "$CURRENT_IP" != *"["* ]] && CURRENT_IP="[${CURRENT_IP}]"
