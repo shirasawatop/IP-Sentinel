@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ==========================================================
-# 脚本名称: updater.sh (IP-Sentinel V3.3.1 养料注入与分频调度中枢)
-# 核心功能: 静默更新热搜词/LBS、指纹库错峰调度、强制出站死锁
+# 脚本名称: updater.sh (IP-Sentinel v3.4.0 养料注入与分频调度中枢)
+# 核心功能: 静默更新热搜词/LBS、指纹库错峰调度、强制出站死锁、版本锚点版
 # ==========================================================
 
 INSTALL_DIR="/opt/ip_sentinel"
@@ -18,10 +18,14 @@ if [ ! -f "$CONFIG_FILE" ]; then
 fi
 source "$CONFIG_FILE"
 
-# 2. 全局日志写入函数
+# 2. 全局日志写入函数 (v3.4.0 引入版本探针)
 log() {
+    # [v3.4.0 核心] 提取当前配置中的版本锚点
+    local local_ver="${AGENT_VERSION:-未知}"
+    
     mkdir -p "${INSTALL_DIR}/logs"
-    printf "[$(date '+%Y-%m-%d %H:%M:%S')] [%-5s] [%-7s] [%s] %s\n" "$2" "$1" "$REGION_CODE" "$3" >> "$LOG_FILE"
+    # 日志格式注入 [版本号] 追踪标识
+    printf "[$(date '+%Y-%m-%d %H:%M:%S')] [v%-5s] [%-5s] [%-7s] [%s] %s\n" "$local_ver" "$2" "$1" "$REGION_CODE" "$3" >> "$LOG_FILE"
 }
 
 log "Updater" "INFO " "========== 触发后台静默 OTA 热数据更新 =========="
