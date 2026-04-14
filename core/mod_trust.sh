@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# 脚本名称: mod_trust.sh (IP 信用净化模块 V3.3.1 拓扑自适应版)
+# 脚本名称: mod_trust.sh (IP 信用净化模块 v3.4.0 版本锚点版)
 # 核心功能: 动态扫描本地 LBS 冷数据，提取权威白名单，执行流量净化
 # ==========================================================
 
@@ -41,12 +41,16 @@ if [ ${#TRUST_URLS[@]} -eq 0 ]; then
     TRUST_URLS=("https://en.wikipedia.org/wiki/Special:Random" "https://www.apple.com/" "https://www.microsoft.com/")
 fi
 
-# 3. 日志规范化
+# 3. 日志规范化 (v3.4.0 引入版本探针)
 log_msg() {
     local TYPE=$1
     local MSG=$2
     local TIME=$(date "+%Y-%m-%d %H:%M:%S")
-    echo "[$TIME] [$TYPE] [Trust  ] [$REGION] $MSG" | tee -a "$LOG_FILE"
+    # [v3.4.0 核心] 提取当前配置中的版本锚点
+    local local_ver="${AGENT_VERSION:-未知}"
+    
+    # 日志格式注入 [版本号] 追踪标识，保持对齐
+    echo "[$TIME] [v%-5s] [%-5s] [Trust  ] [$REGION] $MSG" | sed "s/%-5s/$local_ver/;s/%-5s/$TYPE/" | tee -a "$LOG_FILE"
 }
 
 # 4. 锁定单次会话指纹
