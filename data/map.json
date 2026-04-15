@@ -1,102 +1,120 @@
 {
-  "version": "3.1.0",
-  "updated_at": "2026-04-11",
-  "countries": [
+  "version": "3.5.0",
+  "updated_at": "2026-04-14",
+  "continents": [
     {
-      "id": "US",
-      "name": "United States (美国)",
-      "keyword_file": "kw_US.txt",
-      "states": [
+      "id": "ASIA",
+      "name": "亚太战区 (Asia-Pacific)",
+      "countries": [
         {
-          "id": "CA",
-          "name": "California (加州)",
-          "cities": [
-            { "id": "Los_Angeles", "name": "Los Angeles (洛杉矶)" },
-            { "id": "San_Jose", "name": "San Jose (圣何塞)" }
+          "id": "JP",
+          "name": "Japan (日本)",
+          "keyword_file": "kw_JP.txt",
+          "states": [
+            {
+              "id": "Default",
+              "name": "Default State",
+              "cities": [
+                { "id": "Tokyo", "name": "Tokyo (东京)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SG",
+          "name": "Singapore (新加坡)",
+          "keyword_file": "kw_SG.txt",
+          "states": [
+            {
+              "id": "Default",
+              "name": "Default State",
+              "cities": [
+                { "id": "Singapore", "name": "Singapore (新加坡)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "HK",
+          "name": "Hong Kong (香港)",
+          "keyword_file": "kw_HK.txt",
+          "states": [
+            {
+              "id": "Default",
+              "name": "Default State",
+              "cities": [
+                { "id": "HongKong", "name": "Hong Kong (香港)" }
+              ]
+            }
           ]
         }
       ]
     },
     {
-      "id": "JP",
-      "name": "Japan (日本)",
-      "keyword_file": "kw_JP.txt",
-      "states": [
+      "id": "EUROPE",
+      "name": "欧洲战区 (Europe)",
+      "countries": [
         {
-          "id": "Default",
-          "name": "Default State",
-          "cities": [
-            { "id": "Tokyo", "name": "Tokyo (东京)" }
+          "id": "UK",
+          "name": "United Kingdom (英国)",
+          "keyword_file": "kw_UK.txt",
+          "states": [
+            {
+              "id": "Default",
+              "name": "Default State",
+              "cities": [
+                { "id": "London", "name": "London (伦敦)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "DE",
+          "name": "Germany (德国)",
+          "keyword_file": "kw_DE.txt",
+          "states": [
+            {
+              "id": "Default",
+              "name": "Default State",
+              "cities": [
+                { "id": "Frankfurt", "name": "Frankfurt (法兰克福)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FR",
+          "name": "France (法国)",
+          "keyword_file": "kw_FR.txt",
+          "states": [
+            {
+              "id": "Default",
+              "name": "Default State",
+              "cities": [
+                { "id": "Paris", "name": "Paris (巴黎)" }
+              ]
+            }
           ]
         }
       ]
     },
     {
-      "id": "UK",
-      "name": "United Kingdom (英国)",
-      "keyword_file": "kw_UK.txt",
-      "states": [
+      "id": "AMERICAS",
+      "name": "美洲战区 (Americas)",
+      "countries": [
         {
-          "id": "Default",
-          "name": "Default State",
-          "cities": [
-            { "id": "London", "name": "London (伦敦)" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "DE",
-      "name": "Germany (德国)",
-      "keyword_file": "kw_DE.txt",
-      "states": [
-        {
-          "id": "Default",
-          "name": "Default State",
-          "cities": [
-            { "id": "Frankfurt", "name": "Frankfurt (法兰克福)" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "FR",
-      "name": "France (法国)",
-      "keyword_file": "kw_FR.txt",
-      "states": [
-        {
-          "id": "Default",
-          "name": "Default State",
-          "cities": [
-            { "id": "Paris", "name": "Paris (巴黎)" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "SG",
-      "name": "Singapore (新加坡)",
-      "keyword_file": "kw_SG.txt",
-      "states": [
-        {
-          "id": "Default",
-          "name": "Default State",
-          "cities": [
-            { "id": "Singapore", "name": "Singapore (新加坡)" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "HK",
-      "name": "Hong Kong (香港)",
-      "keyword_file": "kw_HK.txt",
-      "states": [
-        {
-          "id": "Default",
-          "name": "Default State",
-          "cities": [
-            { "id": "HongKong", "name": "Hong Kong (香港)" }
+          "id": "US",
+          "name": "United States (美国)",
+          "keyword_file": "kw_US.txt",
+          "states": [
+            {
+              "id": "CA",
+              "name": "California (加州)",
+              "cities": [
+                { "id": "Los_Angeles", "name": "Los Angeles (洛杉矶)" },
+                { "id": "San_Jose", "name": "San Jose (圣何塞)" }
+              ]
+            }
           ]
         }
       ]
