@@ -19,9 +19,12 @@ if [ -z "$TG_TOKEN" ] || [ -z "$CHAT_ID" ]; then
 fi
 
 # 2. 节点元数据抓取 (v3.2.2 协议自适应与多级容灾版)
-# [v3.3.2 修复: 引入 IP 哈希防同名覆盖机制]
-IP_HASH=$(echo "${PUBLIC_IP:-127.0.0.1}" | md5sum | cut -c 1-4 | tr 'a-z' 'A-Z')
-NODE_NAME="$(hostname | cut -c 1-10)-${IP_HASH}"
+# [v3.5.2 核心: 引入双轨身份架构]
+if [ -z "$NODE_NAME" ]; then
+    IP_HASH=$(echo "${PUBLIC_IP:-127.0.0.1}" | md5sum | cut -c 1-4 | tr 'a-z' 'A-Z')
+    NODE_NAME="$(hostname | cut -c 1-10)-${IP_HASH}"
+fi
+NODE_ALIAS="${NODE_ALIAS:-$NODE_NAME}"
 
 # --- [防线 1: 底层路由锁定与协议自适应] ---
 CURL_BIND_OPT=""
@@ -93,7 +96,7 @@ if [ -z "$LOG_CONTENT" ]; then
     read -r -d '' MSG <<EOT
 🛑 **[IP-Sentinel] 告警：节点异常**
 ----------------------------
-📍 **节点名称**: \`${NODE_NAME}\`
+📍 **节点名称**: \`${NODE_ALIAS}\`
 ⚠️ **警告**: 过去 24 小时无运行日志！
 🛠️ **建议**: 节点可能刚部署完毕，请在面板手动执行一次养护动作。
 EOT
@@ -111,7 +114,7 @@ else
     # 开始组装战报头部
     MSG="📊 **IP-Sentinel 每日简报 (${FLAG} ${REGION_NAME})**
 ----------------------------
-📍 **节点名称**: \`${NODE_NAME}\`
+📍 **节点名称**: \`${NODE_ALIAS}\`
 📡 **出口 IP**: \`${CURRENT_IP}\`
 🛡️ **IP 属性**: ${IP_TYPE}"
 
