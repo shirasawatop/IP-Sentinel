@@ -1,3 +1,13 @@
+kazerne
+eddy merckx
+inter
+bvb - bayern
+fenerbahçe - konyaspor
+congo
+tholen
+ajax - pec vrouwen
+joshua tarling
+jill peeters
 helmond sport - rkc
 vitesse - almere
 emmen - jong az
@@ -72,7 +82,6 @@ rkc - dordrecht
 galatasaray - çorum fk
 nac - vvv
 heracles - den bosch
-joshua tarling
 roda - helmond sport
 almere - jong psv
 china
@@ -189,12 +198,3 @@ iran
 azzedine ounahi
 de twentsche courant tubantia
 f1 nieuws
-luchtverdediging
-zuid frankrijk
-karen pirie
-grensbewaking
-donau
-var frankrijk
-hond
-girona arsenal
-zoon
