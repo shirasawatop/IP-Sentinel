@@ -1,3 +1,13 @@
+009803
+thời tiết
+00406a 配 息
+สภาพอากาศ
+天氣
+weather
+工業 電腦
+房子
+刮刮樂
+人口高齡化
 臺北市長
 楊萬連
 补贴
@@ -188,13 +198,3 @@ nfl
 國泰世華
 blizzcon 2026
 聯邦銀行
-blizzcon
-菲律賓國防部長
-getty
-暴雪嘉年華
-熱刺 對 艾佛頓
-人工智慧
-ngoại hạng anh
-大 樂 透
-anthropic
-nifty
