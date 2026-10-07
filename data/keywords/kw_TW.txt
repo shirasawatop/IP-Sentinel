@@ -1,3 +1,13 @@
+东森新闻
+tsm
+spacex 股價
+mu
+友達光電
+流感症狀
+譚松韻
+台灣高鐵
+國慶連假
+台灣大哥大
 s&p 500
 高雄市
 謝龍介
@@ -46,7 +56,6 @@ croatia vs england
 黃仁勳
 跌倒
 非農
-mu
 銅箔
 aaoi
 藝人
@@ -77,7 +86,6 @@ claude
 股票
 0056
 東北季風
-tsm
 尹崇恩
 norwegia vs portugal
 歐國聯
@@ -114,7 +122,6 @@ portugal vs wales
 中秋節
 台南火災
 邊佑錫
-台灣高鐵
 celebration
 台灣彩券
 田馥甄
@@ -191,10 +198,3 @@ clarity act
 ios 26.7
 steam frame
 交易
-義甲
-小琉球
-廣州
-貨幣
-亞歷山大·茲維列夫
-us open
-班·謝爾頓
