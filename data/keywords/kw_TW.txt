@@ -1,7 +1,16 @@
+德甲
+lcp
+worlds 2026
+川普
+碰撞
+vix
+原油
+股災
+yandex
+驅逐出境
 00406a
 魅影神捕
 李四川
-worlds 2026
 lcs
 歐聯
 boa
@@ -10,7 +19,6 @@ boa
 國泰航空
 roma vs madrid
 man city vs psg
-川普
 台北市
 羅馬 對 皇家馬德里
 曼城
@@ -59,7 +67,6 @@ man utd vs tottenham
 義甲
 臺北市長
 伺服器
-德甲
 riot
 巴拿馬
 西甲
@@ -191,10 +198,3 @@ portugal vs wales
 地震速報
 美股指數
 地震
-中秋節
-台南火災
-邊佑錫
-celebration
-台灣彩券
-田馥甄
-lonzo ball
