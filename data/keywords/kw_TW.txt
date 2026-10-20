@@ -1,3 +1,13 @@
+spcx stock
+2077
+歐冠比賽
+nba
+曼城 對 aek雅典
+psg
+psg vs barcelona
+歐冠
+巴薩
+nba直播
 vix指數
 預測
 銅箔
@@ -22,7 +32,6 @@ nottm forest vs arsenal
 拜仁
 twitch
 lol
-巴薩
 陳菊
 gt world challenge
 英雄聯盟世界大賽
@@ -148,7 +157,6 @@ weather tomorrow
 中信兄弟
 李 珠 珢
 西班牙 對 捷克
-nba
 croatia vs england
 克羅埃西亞 對 英格蘭
 蔣萬安
@@ -190,11 +198,3 @@ claude
 台積電
 股票
 0056
-東北季風
-尹崇恩
-norwegia vs portugal
-歐國聯
-台74線
-中国
-槍決
-群 創 光電
