@@ -1,3 +1,13 @@
+vneid
+mc
+chelsea
+bayern vs
+man city
+efl cup
+juventus
+twitch
+liverpool
+bayern
 thứ hạng của al-shamal gặp al hilal
 chuyến bay 370 của malaysia airlines
 ars vs
@@ -25,7 +35,6 @@ laliga
 barcelona vs real madrid
 thứ hạng của sunderland gặp leeds united fc
 thứ hạng của sc freiburg gặp bayern
-bayern
 bayern munich
 lol
 thứ hạng của dortmund gặp eintracht frankfurt
@@ -46,7 +55,6 @@ ipswich town đấu với nottm forest
 lol esport
 bruno fernandes
 al qadisiya đấu với al hilal
-twitch
 ajax đấu với atalanta
 thứ hạng của juventus gặp rennes
 lillestrøm đấu với real sociedad
@@ -81,7 +89,6 @@ el clásico
 parma đấu với torino
 getafe đấu với rayo
 tottenham – aston villa
-juventus
 real madrid – sevilla
 real madrid đấu với sevilla
 juventus đấu với lazio
@@ -117,7 +124,6 @@ kết quả cúp c2
 7m
 celta đấu với juventus
 thứ hạng của feyenoord gặp como 1907
-mc
 maghnes akliouche
 lincoln đấu với west ham
 betis đấu với porto
@@ -192,9 +198,3 @@ croatia vs spain
 thụy sĩ đấu với bắc macedonia
 thực phẩm
 croatia đấu với tây ban nha
-argentina
-dự báo thời tiết
-chỉ lợn
-đỗ thanh hải
-cuba vs
-agribank
