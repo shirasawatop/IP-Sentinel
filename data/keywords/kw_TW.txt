@@ -1,5 +1,14 @@
-台積電
+所得 替代 率
+tsm
 s&p 500
+友達 法 說
+台北市
+卡洛斯·艾卡拉茲
+intel
+sndk
+patrick stewart
+intel 股價
+台積電
 溫度
 liverpool vs chelsea
 曾麗燕
@@ -125,7 +134,6 @@ boa
 國泰航空
 roma vs madrid
 man city vs psg
-台北市
 羅馬 對 皇家馬德里
 曼城
 曼城 對 巴黎聖日耳曼
@@ -182,7 +190,6 @@ aaoi
 美股新聞
 openai
 东森新闻
-tsm
 spacex 股價
 友達光電
 流感症狀
@@ -191,10 +198,3 @@ spacex 股價
 高雄市
 謝龍介
 敬老 之 日
-供水
-衛星
-賴瑞隆
-克羅埃西亞 對 西班牙
-英格蘭 對 捷克
-選擇權
-009803
