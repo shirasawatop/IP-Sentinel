@@ -1,3 +1,13 @@
+nvidia
+溫度
+f1
+國際米蘭對科莫
+足球直播
+英超
+premier league standings
+車路士
+man utd vs aston villa
+chelsea
 瓦倫西亞對皇家馬德里
 man city
 曼城
@@ -52,7 +62,6 @@ airplane crash
 烏蛟騰
 天气
 盧頌恩
-f1
 pl
 利物浦
 liverpool vs arsenal
@@ -91,7 +100,6 @@ synology
 林盛斌
 吳若希
 伯恩茅斯對阿斯頓維拉
-chelsea
 利物浦對切爾西
 英聯盃
 何 麥
@@ -123,7 +131,6 @@ premier league games
 香港財經時報
 泥面人
 ufc
-車路士
 足球
 宋慧喬
 lol
@@ -154,7 +161,6 @@ man city vs aek
 liverpool
 nba
 ucl
-足球直播
 曼城對aek雅典
 熱刺
 熱帶氣旋
@@ -192,9 +198,3 @@ tesla 股價
 周志康
 告別式
 中央援港應急醫院
-里昂對水晶宮
-a2o lite
-阮嘉敏
-債務
-臺日電梯
-陳星妤
