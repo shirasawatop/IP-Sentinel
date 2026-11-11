@@ -1,3 +1,13 @@
+weather
+chi lợn
+thời tiết
+날씨
+đái tháo đường
+thời tiết hải phòng
+vtv1
+thận
+viên chức
+cần thơ
 đồng nai
 giáo viên
 may mắn
@@ -76,11 +86,8 @@ kết quả bóng đá
 kết quả cúp c1
 bruno fernandes
 câu lạc bộ bóng đá inter miami
-날씨
 hôm nay có mưa không
 thứ hạng của al wasl gặp al-quwa al-jawiya
-thời tiết
-weather
 giá vàng thế giới hôm nay
 siêu quả bóng vàng
 lễ cưới
@@ -191,10 +198,3 @@ flashscore
 inter milan
 aston villa
 ucl
-ferran torres
-al nasr
-mc vs
-nba
-barcelona
-liver vs
-barca
