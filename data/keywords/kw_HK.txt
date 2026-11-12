@@ -1,3 +1,13 @@
+weather
+天气
+italy vs france
+蔡天鳳
+england vs croatia
+nations league
+英格蘭對克羅埃西亞
+outlook
+土耳其對比利時
+歐國聯
 英偉達
 kimberly powell
 林盛斌
@@ -8,7 +18,6 @@ weather hong kong
 claude
 足球
 長者日
-weather
 香港
 長者
 星島日報
@@ -19,7 +28,6 @@ david walliams
 cpi
 姚子羚
 observatory
-天气
 天氣
 遺囑
 套餐
@@ -190,11 +198,3 @@ dakota johnson
 80億分之一遊戲
 李秀滿
 伍咏薇
-璀璨之城劇情
-華為
-林 鈺 洧
-維尼修斯·儒尼奧爾
-ac米蘭對亞特蘭大
-感染
-古天樂
-nottm forest vs arsenal
