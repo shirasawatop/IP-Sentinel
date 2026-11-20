@@ -1,9 +1,17 @@
+護 盤
+thời tiết
+yahoo股市
+amd stock
+vix指數
+台積電adr
+nvda
+夜盤
+台積電
+老農津貼
 好市多黑五
 翡翠水庫
 伺服器
 玩股網
-thời tiết
-台積電
 台積電adr盤前
 天氣
 巴士
@@ -20,7 +28,6 @@ argentina vs kosta rika
 孫鵬
 暴龍 對 尼克
 散戶
-nvda
 harvey jones
 投资
 预算
@@ -191,10 +198,3 @@ intel
 sndk
 patrick stewart
 intel 股價
-溫度
-liverpool vs chelsea
-曾麗燕
-ลิเวอร์พูล พบ เชลซี
-man city vs brighton
-typhoon champi
-t1
